@@ -1,0 +1,245 @@
+<template>
+  <div class="the-results">
+    <table>
+      <tr>
+        <th></th>
+        <th>1/64</th>
+        <th>1/32</th>
+        <th>1/16</th>
+        <th>1/8</th>
+        <th>1/4</th>
+        <th>1/3</th>
+        <th>1/2</th>
+        <th>1/1</th>
+        <th>2/1</th>
+        <th>3/1</th>
+        <th>4/1</th>
+        <th>8/1</th>
+        <th>16/1</th>
+        <th>32/1</th>
+      </tr>
+      <tr>
+        <th>BPM</th>
+        <td>{{formatDecimals(divideBpm(1/64))}}</td>
+        <td>{{formatDecimals(divideBpm(1/32))}}</td>
+        <td>{{formatDecimals(divideBpm(1/16))}}</td>
+        <td>{{formatDecimals(divideBpm(1/8))}}</td>
+        <td>{{formatDecimals(divideBpm(1/4))}}</td>
+        <td>{{formatDecimals(divideBpm(1/3))}}</td>
+        <td>{{formatDecimals(divideBpm(1/2))}}</td>
+        <td>{{formatDecimals(divideBpm(1))}}</td>
+        <td>{{formatDecimals(divideBpm(2))}}</td>
+        <td>{{formatDecimals(divideBpm(3))}}</td>
+        <td>{{formatDecimals(divideBpm(4))}}</td>
+        <td>{{formatDecimals(divideBpm(8))}}</td>
+        <td>{{formatDecimals(divideBpm(16))}}</td>
+        <td>{{formatDecimals(divideBpm(32))}}</td>
+      </tr>
+      <tr>
+        <th>ms</th>
+        <td>{{formatDecimals(divideMs(1/64))}}</td>
+        <td>{{formatDecimals(divideMs(1/32))}}</td>
+        <td>{{formatDecimals(divideMs(1/16))}}</td>
+        <td>{{formatDecimals(divideMs(1/8))}}</td>
+        <td>{{formatDecimals(divideMs(1/4))}}</td>
+        <td>{{formatDecimals(divideMs(1/3))}}</td>
+        <td>{{formatDecimals(divideMs(1/2))}}</td>
+        <td>{{formatDecimals(divideMs(1))}}</td>
+        <td>{{formatDecimals(divideMs(2))}}</td>
+        <td>{{formatDecimals(divideMs(3))}}</td>
+        <td>{{formatDecimals(divideMs(4))}}</td>
+        <td>{{formatDecimals(divideMs(8))}}</td>
+        <td>{{formatDecimals(divideMs(16))}}</td>
+        <td>{{formatDecimals(divideMs(32))}}</td>
+      </tr>
+      <tr>
+        <th>Hz</th>
+        <td>{{formatDecimals(divideHz(1/64))}}</td>
+        <td>{{formatDecimals(divideHz(1/32))}}</td>
+        <td>{{formatDecimals(divideHz(1/16))}}</td>
+        <td>{{formatDecimals(divideHz(1/8))}}</td>
+        <td>{{formatDecimals(divideHz(1/4))}}</td>
+        <td>{{formatDecimals(divideHz(1/3))}}</td>
+        <td>{{formatDecimals(divideHz(1/2))}}</td>
+        <td>{{formatDecimals(divideHz(1))}}</td>
+        <td>{{formatDecimals(divideHz(2))}}</td>
+        <td>{{formatDecimals(divideHz(3))}}</td>
+        <td>{{formatDecimals(divideHz(4))}}</td>
+        <td>{{formatDecimals(divideHz(8))}}</td>
+        <td>{{formatDecimals(divideHz(16))}}</td>
+        <td>{{formatDecimals(divideHz(32))}}</td>
+      </tr>
+      <tr>
+        <th></th>
+        <th>1/64.</th>
+        <th>1/32.</th>
+        <th>1/16.</th>
+        <th>1/8.</th>
+        <th>1/4.</th>
+        <th>1/3.</th>
+        <th>1/2.</th>
+        <th>1/1.</th>
+        <th>2/1.</th>
+        <th>3/1.</th>
+        <th>4/1.</th>
+        <th>8/1.</th>
+        <th>16/1.</th>
+        <th>32/1.</th>
+      </tr>
+      <tr>
+        <th>BPM</th>
+        <td>{{formatDecimals(divideBpm(1/64*1.5))}}</td>
+        <td>{{formatDecimals(divideBpm(1/32*1.5))}}</td>
+        <td>{{formatDecimals(divideBpm(1/16*1.5))}}</td>
+        <td>{{formatDecimals(divideBpm(1/8*1.5))}}</td>
+        <td>{{formatDecimals(divideBpm(1/4*1.5))}}</td>
+        <td>{{formatDecimals(divideBpm(1/3*1.5))}}</td>
+        <td>{{formatDecimals(divideBpm(1/2*1.5))}}</td>
+        <td>{{formatDecimals(divideBpm(1*1.5))}}</td>
+        <td>{{formatDecimals(divideBpm(2*1.5))}}</td>
+        <td>{{formatDecimals(divideBpm(3*1.5))}}</td>
+        <td>{{formatDecimals(divideBpm(4*1.5))}}</td>
+        <td>{{formatDecimals(divideBpm(8*1.5))}}</td>
+        <td>{{formatDecimals(divideBpm(16*1.5))}}</td>
+        <td>{{formatDecimals(divideBpm(32*1.5))}}</td>
+      </tr>
+      <tr>
+        <th>ms</th>
+        <td>{{formatDecimals(divideMs(1/64*1.5))}}</td>
+        <td>{{formatDecimals(divideMs(1/32*1.5))}}</td>
+        <td>{{formatDecimals(divideMs(1/16*1.5))}}</td>
+        <td>{{formatDecimals(divideMs(1/8*1.5))}}</td>
+        <td>{{formatDecimals(divideMs(1/4*1.5))}}</td>
+        <td>{{formatDecimals(divideMs(1/3*1.5))}}</td>
+        <td>{{formatDecimals(divideMs(1/2*1.5))}}</td>
+        <td>{{formatDecimals(divideMs(1*1.5))}}</td>
+        <td>{{formatDecimals(divideMs(2*1.5))}}</td>
+        <td>{{formatDecimals(divideMs(3*1.5))}}</td>
+        <td>{{formatDecimals(divideMs(4*1.5))}}</td>
+        <td>{{formatDecimals(divideMs(8*1.5))}}</td>
+        <td>{{formatDecimals(divideMs(16*1.5))}}</td>
+        <td>{{formatDecimals(divideMs(32*1.5))}}</td>
+      </tr>
+      <tr>
+        <th>Hz</th>
+        <td>{{formatDecimals(divideHz(1/64*1.5))}}</td>
+        <td>{{formatDecimals(divideHz(1/32*1.5))}}</td>
+        <td>{{formatDecimals(divideHz(1/16*1.5))}}</td>
+        <td>{{formatDecimals(divideHz(1/8*1.5))}}</td>
+        <td>{{formatDecimals(divideHz(1/4*1.5))}}</td>
+        <td>{{formatDecimals(divideHz(1/3*1.5))}}</td>
+        <td>{{formatDecimals(divideHz(1/2*1.5))}}</td>
+        <td>{{formatDecimals(divideHz(1*1.5))}}</td>
+        <td>{{formatDecimals(divideHz(2*1.5))}}</td>
+        <td>{{formatDecimals(divideHz(3*1.5))}}</td>
+        <td>{{formatDecimals(divideHz(4*1.5))}}</td>
+        <td>{{formatDecimals(divideHz(8*1.5))}}</td>
+        <td>{{formatDecimals(divideHz(16*1.5))}}</td>
+        <td>{{formatDecimals(divideHz(32*1.5))}}</td>
+      </tr>
+      <tr>
+        <th></th>
+        <th>1/64T</th>
+        <th>1/32T</th>
+        <th>1/16T</th>
+        <th>1/8T</th>
+        <th>1/4T</th>
+        <th>1/3T</th>
+        <th>1/2T</th>
+        <th>1/1T</th>
+        <th>2/1T</th>
+        <th>3/1T</th>
+        <th>4/1T</th>
+        <th>8/1T</th>
+        <th>16/1T</th>
+        <th>32/1T</th>
+      </tr>
+      <tr>
+        <th>BPM</th>
+        <td>{{formatDecimals(divideBpm(1/64*1.5))}}</td>
+        <td>{{formatDecimals(divideBpm(1/32*1.5))}}</td>
+        <td>{{formatDecimals(divideBpm(1/16*1.5))}}</td>
+        <td>{{formatDecimals(divideBpm(1/8*1.5))}}</td>
+        <td>{{formatDecimals(divideBpm(1/4*1.5))}}</td>
+        <td>{{formatDecimals(divideBpm(1/3*1.5))}}</td>
+        <td>{{formatDecimals(divideBpm(1/2*1.5))}}</td>
+        <td>{{formatDecimals(divideBpm(1*1.5))}}</td>
+        <td>{{formatDecimals(divideBpm(2*1.5))}}</td>
+        <td>{{formatDecimals(divideBpm(3*1.5))}}</td>
+        <td>{{formatDecimals(divideBpm(4*1.5))}}</td>
+        <td>{{formatDecimals(divideBpm(8*1.5))}}</td>
+        <td>{{formatDecimals(divideBpm(16*1.5))}}</td>
+        <td>{{formatDecimals(divideBpm(32*1.5))}}</td>
+      </tr>
+      <tr>
+        <th>ms</th>
+        <td>{{formatDecimals(divideMs(1/64*1.5))}}</td>
+        <td>{{formatDecimals(divideMs(1/32*1.5))}}</td>
+        <td>{{formatDecimals(divideMs(1/16*1.5))}}</td>
+        <td>{{formatDecimals(divideMs(1/8*1.5))}}</td>
+        <td>{{formatDecimals(divideMs(1/4*1.5))}}</td>
+        <td>{{formatDecimals(divideMs(1/3*1.5))}}</td>
+        <td>{{formatDecimals(divideMs(1/2*1.5))}}</td>
+        <td>{{formatDecimals(divideMs(1*1.5))}}</td>
+        <td>{{formatDecimals(divideMs(2*1.5))}}</td>
+        <td>{{formatDecimals(divideMs(3*1.5))}}</td>
+        <td>{{formatDecimals(divideMs(4*1.5))}}</td>
+        <td>{{formatDecimals(divideMs(8*1.5))}}</td>
+        <td>{{formatDecimals(divideMs(16*1.5))}}</td>
+        <td>{{formatDecimals(divideMs(32*1.5))}}</td>
+      </tr>
+      <tr>
+        <th>Hz</th>
+        <td>{{formatDecimals(divideHz(1/64*1.5))}}</td>
+        <td>{{formatDecimals(divideHz(1/32*1.5))}}</td>
+        <td>{{formatDecimals(divideHz(1/16*1.5))}}</td>
+        <td>{{formatDecimals(divideHz(1/8*1.5))}}</td>
+        <td>{{formatDecimals(divideHz(1/4*1.5))}}</td>
+        <td>{{formatDecimals(divideHz(1/3*1.5))}}</td>
+        <td>{{formatDecimals(divideHz(1/2*1.5))}}</td>
+        <td>{{formatDecimals(divideHz(1*1.5))}}</td>
+        <td>{{formatDecimals(divideHz(2*1.5))}}</td>
+        <td>{{formatDecimals(divideHz(3*1.5))}}</td>
+        <td>{{formatDecimals(divideHz(4*1.5))}}</td>
+        <td>{{formatDecimals(divideHz(8*1.5))}}</td>
+        <td>{{formatDecimals(divideHz(16*1.5))}}</td>
+        <td>{{formatDecimals(divideHz(32*1.5))}}</td>
+      </tr>
+    </table>
+  </div>
+</template>
+
+<script>
+  export default {
+    name: "TheResults",
+    computed: {
+      bpm() {
+        return this.$store.state.bpm
+      },
+      ms() {
+        return this.$store.state.ms
+      },
+      hz() {
+        return this.$store.state.hz
+      }
+    },
+    methods: {
+      divideBpm(division) {
+        return this.bpm / division
+      },
+      divideMs(division) {
+        return this.ms * division
+      },
+      divideHz(division) {
+        return this.hz * division
+      },
+      formatDecimals(hz, decimals = 3) {
+        return Number.isInteger(hz) ? hz : hz.toFixed(decimals)
+      }
+    }
+  }
+</script>
+
+<style scoped>
+
+</style>
